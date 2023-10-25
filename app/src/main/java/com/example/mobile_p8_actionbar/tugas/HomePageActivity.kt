@@ -1,5 +1,6 @@
 package com.example.mobile_p8_actionbar.tugas
 
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
@@ -7,6 +8,7 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContentProviderCompat.requireContext
 import com.example.mobile_p8_actionbar.R
 
 
@@ -38,7 +40,8 @@ class HomePageActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId){
             R.id.action_signout-> {
-                finish()
+                val intentToHome = Intent(this@HomePageActivity, AuthActivity::class.java)
+                startActivity(intentToHome)
                 true
             }
             else->(true)
